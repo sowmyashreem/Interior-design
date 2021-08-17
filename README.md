@@ -60,7 +60,10 @@ Contact-us -Here user can raise any issue related to interior designs.
 
 ![](screenshots/img7.png)
 
+## Purpose of project
+
+I have developed this project during my 7th semester of computer science engineering for the completion of acadamic mini-project.
 
 ## CONCLUSION
 
-I have developed this project during my 7th semester of computer science engineering for the completion of the mini-project.
+Interior design management system is an application which has 2 modules i.e. Administrator module and User module. Administrator manages all information and has access rights to add,delete, edit and view the data related to projects, clients, customers/users, interiors etc. User can view all the interior design and also can apply filter to choose required interior design.Users can contact admin through contact form.In future, project can be extended to maintain all the details of a interior designs in the system. The future version will include storing the details of all the interiors which attract customer etc.
