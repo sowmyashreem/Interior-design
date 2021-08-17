@@ -26,7 +26,7 @@ Contact-us -Here user can raise any issue related to interior designs.
 
 ### System Architecture
 
-![](screenshots/img2.png)
+![](screenshots/img.png)
 
 
 ### E-R Diagram
