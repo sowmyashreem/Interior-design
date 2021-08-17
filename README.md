@@ -64,9 +64,3 @@ Contact-us -Here user can raise any issue related to interior designs.
 ## CONCLUSION
 
 I have developed this project during my 7th semester of computer science engineering for the completion of the mini-project.
-
-
-
-
-
-
