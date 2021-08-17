@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2018 at 05:36 PM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 7.0.13
+-- Generation Time: Aug 17, 2021 at 08:29 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -27,18 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin_login` (
-  `user_id` int(250) NOT NULL,
-  `user_name` varchar(250) NOT NULL,
-  `user_password` int(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `user_id` int(20) NOT NULL,
+  `user_name` varchar(20) NOT NULL,
+  `user_password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `admin_login`
 --
 
 INSERT INTO `admin_login` (`user_id`, `user_name`, `user_password`) VALUES
-(0, 'abc', 0),
-(1, 'admin@admin.com', 1234);
+(1, 'sowmya', '123'),
+(3, '1', '1');
 
 -- --------------------------------------------------------
 
@@ -49,20 +50,48 @@ INSERT INTO `admin_login` (`user_id`, `user_name`, `user_password`) VALUES
 CREATE TABLE `clients` (
   `client_id` int(250) NOT NULL,
   `client_name` varchar(250) NOT NULL,
-  `client_pic` varchar(250) NOT NULL,
+  `client_pic` mediumtext NOT NULL,
   `client_details` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `clients`
 --
 
 INSERT INTO `clients` (`client_id`, `client_name`, `client_pic`, `client_details`) VALUES
-(1, 'Abbas Ahmad', '1545573419_download.png', 'Message form your client goes here.'),
-(2, 'Fazal Kareem', '1545577105_download.png', 'Comments form your client'),
-(3, 'Client no 1', '1545577124_download.png', 'Details goes here'),
-(4, 'Client no 2', '1545577137_download.png', 'Details goes here'),
-(5, 'name of the c', '1545581877_1.PNG', 'message form the cust');
+(0, 'sowmya', '1612002989_1609224017_1609223855_1609223773_female_images.jpg', 'bangalore');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `number` varchar(10) NOT NULL,
+  `messege` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `firstName`, `email`, `number`, `messege`) VALUES
+(1, 'SOWMYASHREE M', 'swmshree123@gmail.com', '2147483647', ''),
+(2, 'SOWMYASHREE M', 'swmshree123@gmail.com', '2147483647', ''),
+(3, 'netra', 'netra@gmail.com', '10', 'hii'),
+(4, 'netra', 'netra@gmail.com', '9110221295', 'hii'),
+(5, 'pushpa', 'pushpa@gmail.com', '8904443836', ''),
+(6, 'SOWMYASHREE M', 'swmshree123@gmail.com', '8904443836', ''),
+(7, 'hi', 'swmshree123@gmail.com', '8904443836', ''),
+(8, 'hi', 'swmshree123@gmail.com', '8904443836', ''),
+(9, 'hi', 'swmshree123@gmail.com', '8904443836', ''),
+(10, '1', '2@gmail.com', '3', ''),
+(11, '1', '2@gmail.com', '3', ''),
+(12, '1', '2@gmail.com', '3', '');
 
 -- --------------------------------------------------------
 
@@ -72,10 +101,17 @@ INSERT INTO `clients` (`client_id`, `client_name`, `client_pic`, `client_details
 
 CREATE TABLE `gallery` (
   `gallery_id` int(250) NOT NULL,
-  `gallery_pic` varchar(250) NOT NULL,
-  `gallery_name` varchar(250) NOT NULL,
-  `gallery_details` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `gallery_pic` mediumtext NOT NULL,
+  `gallery_name` varchar(25) NOT NULL,
+  `gallery_details` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gallery`
+--
+
+INSERT INTO `gallery` (`gallery_id`, `gallery_pic`, `gallery_name`, `gallery_details`) VALUES
+(1, '1610689917_bedroom1.jpg', 'bedroom', 'bedrrom');
 
 -- --------------------------------------------------------
 
@@ -85,22 +121,19 @@ CREATE TABLE `gallery` (
 
 CREATE TABLE `main_slider` (
   `slider_pic_id` int(250) NOT NULL,
-  `slider_pic` varchar(250) NOT NULL,
+  `slider_pic` mediumtext NOT NULL,
   `slider_pic_title` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `main_slider`
 --
 
 INSERT INTO `main_slider` (`slider_pic_id`, `slider_pic`, `slider_pic_title`) VALUES
-(1, '1545581812_1.PNG', 'Bedrooms'),
-(2, '2.jpg', 'this is title'),
-(3, '3.jpg', 'this is title'),
-(4, '4.jpg', 'this is title'),
-(5, '5.jpg', 'this is title'),
-(6, '6.jpg', 'this is title'),
-(7, '7.jpg', 'this is title');
+(1, '1611987151_pro_12.jpg', ''),
+(2, '1609226571_gallery-img7.jpg', ''),
+(3, '1609225045_gallery-img5.jpg', ''),
+(4, '1609224899_gallery-img1.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -110,19 +143,17 @@ INSERT INTO `main_slider` (`slider_pic_id`, `slider_pic`, `slider_pic_title`) VA
 
 CREATE TABLE `projects` (
   `project_id` int(250) NOT NULL,
-  `project_pic` varchar(250) NOT NULL,
+  `project_pic` varchar(2500) NOT NULL,
   `project_name` varchar(250) NOT NULL,
   `project_details` varchar(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `projects`
 --
 
 INSERT INTO `projects` (`project_id`, `project_pic`, `project_name`, `project_details`) VALUES
-(1, '1545576318_bedroom1 - Copy.jpg', 'House no 1', 'details goes here'),
-(2, '1545576337_bedroom1.jpg', 'House no 2', 'Details goes here'),
-(3, '1545581895_5.PNG', 'Proj 1', 'details');
+(2, '1611987048_pro_1.jpg', 'bathroom', 'bangalore');
 
 --
 -- Indexes for dumped tables
@@ -135,10 +166,10 @@ ALTER TABLE `admin_login`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `clients`
+-- Indexes for table `contact`
 --
-ALTER TABLE `clients`
-  ADD PRIMARY KEY (`client_id`);
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `gallery`
@@ -163,25 +194,36 @@ ALTER TABLE `projects`
 --
 
 --
--- AUTO_INCREMENT for table `clients`
+-- AUTO_INCREMENT for table `admin_login`
 --
-ALTER TABLE `clients`
-  MODIFY `client_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `admin_login`
+  MODIFY `user_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
   MODIFY `gallery_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `main_slider`
 --
 ALTER TABLE `main_slider`
-  MODIFY `slider_pic_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `slider_pic_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `project_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
