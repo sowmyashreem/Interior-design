@@ -19,6 +19,7 @@ Contact-us -Here users can raise any issue related to interior designs.
 * HTML
 * JavaScript
 * CSS
+* PHP
 * MYSQL
 * Apache Server
 
